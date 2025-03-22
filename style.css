@@ -1,0 +1,280 @@
+/*navigation in nav */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: #444;
+  background-color: #f3f3f3;
+  height: 100vh;
+  padding: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+
+.welcome {
+  font-size: 1.9rem;
+  font-weight: 500;
+}
+
+.logo {
+  height: 1.5rem;
+}
+
+.login {
+  display: flex;
+}
+/*this one is both for input field*/
+.login__input {
+  border: none;
+  padding: 0.5rem 2rem;
+  font-size: 1.6rem;
+  font-family: inherit;
+  text-align: center;
+  width: 12rem;
+  border-radius: 10rem;
+  margin-right: 1rem;
+  color: inherit;
+  border: 1px solid #fff;
+  transition: all 0.3s;
+}
+
+.login__input:focus {
+  outline: none;
+  border: 1px solid #ccc;
+}
+
+.login__input:placeholder {
+  color: #bbb;
+}
+
+/*this one is login button/arrow*/
+.login__btn {
+  border: none;
+  background: none;
+  font-size: 2.2rem;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.login__btn:hover,
+.login__btn:focus,
+.btn--sort:hover,
+.btn--sort:focus {
+  outline: none;
+  color: #777;
+}
+
+/*main  App work*/
+.app {
+  position: relative;
+  max-width: 100rem;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: 4fr 3fr;
+  grid-template-rows: auto repeat(3, 15rem) auto;
+  gap: 2rem;
+
+  /*below creates fade in/out anumation*/
+  opacity: 0;
+  transition: all 1s;
+}
+
+/*balance start from here */
+.balance {
+  grid-column: 1 / span 2;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.balance__label {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: -0.2rem;
+}
+
+.balance__date {
+  font-size: 1.4rem;
+  color: #888;
+}
+
+.balance__value {
+  font-size: 4.5rem;
+  font-weight: 400;
+}
+
+/*Movements start for here */
+.movements {
+  grid-row: 2 / span 3;
+  background-color: #fff;
+  border-radius: 1rem;
+  overflow: scroll;
+}
+
+.movements__row {
+  padding: 2.25rem 4rem;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.movements__type {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.1rem 1rem;
+  border-radius: 10rem;
+  margin-right: 2rem;
+}
+
+.movements__date {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #666;
+}
+
+.movements__type--deposit {
+  background-image: linear-gradient(to top left, #39b385, #9be15c);
+}
+
+.movements__type--withdrawal {
+  background-image: linear-gradient(to top left, #e52a5a, #ff5855);
+}
+
+.movements__value {
+  font-size: 1.7rem;
+  margin-left: auto;
+}
+/*summary starts from here*/
+.summary {
+  /*grid-row: 5/6;*/
+  display: flex;
+  align-items: baseline;
+  padding: 0 0.3rem;
+  margin-top: 1rem;
+}
+
+.summary__label {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  margin-right: 0.8rem;
+}
+
+.summary__value {
+  font-size: 2.2rem;
+  margin-right: 2.5rem;
+}
+
+.summary__value--in,
+.summary__value--interest {
+  color: #66c873;
+}
+
+.summary__value--out {
+  color: red;
+}
+
+.form__btn--sort {
+  margin-left: auto;
+  border: none;
+  background: none;
+  font-size: 1.3rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/*-------opration---------*/
+/*transfer money starts heere*/
+.operation__transfer {
+  background-image: linear-gradient(to top left, #ffb003, #ffcb03);
+  border-radius: 10px;
+}
+.inputing {
+  display: flex;
+}
+.label--transfer {
+  font-size: 1.5rem;
+  color: black;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+.operation__label {
+  font-size: 1.2rem;
+  margin-top: 7px;
+  text-align: center;
+}
+
+.form__input--to,
+.form__input--amount {
+  border: none;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  width: 12rem;
+  border-radius: 3rem;
+  margin-right: 1rem;
+}
+.form__btn--transfer,
+.form__btn--loan,
+.form__btn--close {
+  margin-top: 0.5rem;
+  height: 2rem;
+  width: 2.5rem;
+  border: none;
+}
+/*request loan start here*/
+.operation__loan {
+  background-image: linear-gradient(to top left, #39b385, #9be15c);
+  border-radius: 10px;
+}
+
+.form__input--loan--amount {
+  border: none;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  width: 12rem;
+  border-radius: 3rem;
+  margin-right: 1rem;
+}
+
+/*close account start here*/
+.operation__close {
+  background-image: linear-gradient(to top left, #e52a5a, #ff5854);
+  border-radius: 10px;
+}
+
+.form__input--use,
+.form__input--user {
+  border: none;
+  padding: 0.5rem 2rem;
+  text-align: center;
+  width: 12rem;
+  border-radius: 3rem;
+  margin-right: 1rem;
+}
+
+/*timer starts from here*/
+.count-down {
+  display: flex;
+}
+.timer {
+  margin-left: 10px;
+}
